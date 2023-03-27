@@ -1,0 +1,29 @@
+.character-info{
+display: flex;
+gap: 56px;
+}
+
+.character-info__character-image{
+flex-basis: 294px;
+flex-shrink: 0;
+height: 294px;
+}
+
+.character-info__character-image__item{
+width: 100%;
+height: 100%;
+}
+
+
+.character-info__name{
+font-size: 22px;
+line-height: 26px;
+font-weight: 700;
+margin-bottom: 28px;
+}
+
+.character-info__description{
+width: 550px;
+font-size: 18px;
+line-height: 21px;
+}

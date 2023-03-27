@@ -1,0 +1,29 @@
+.characters-block {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.actions-block {
+    flex-basis: 425px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.btn-brown--position-center {
+    left: 25%;
+}
+
+.btn-brown--size {
+    width: 170px;
+}
+
+.main-page__character-label {
+    position: absolute;
+    width: 467px;
+    height: 372px;
+    top: 750px;
+    right: -178px;
+    z-index: -1;
+}

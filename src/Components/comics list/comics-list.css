@@ -1,0 +1,29 @@
+.magazines{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.comics {
+flex-basis: 225px;
+flex-shrink: 0;
+height: 400px;
+margin-bottom: 55px;
+}
+
+.comics__image-wrapper{
+height: 345px;
+margin-bottom: 8px;
+}
+.comics__comics-name{
+font-size: 14px;
+line-height: 16px;
+font-weight: 700;
+margin-bottom: 5px;
+}
+
+.comics__price{
+font-size: 14px;
+line-height: 16px;
+color: rgba(0, 0, 0, 0.6);
+}

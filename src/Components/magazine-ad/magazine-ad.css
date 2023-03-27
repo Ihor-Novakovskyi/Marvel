@@ -1,0 +1,36 @@
+.ad-label {
+display: flex;
+padding-left: 45px;
+padding-right: 25px;
+margin-bottom: 56px;
+justify-content: space-between;
+height: 100px;
+background-color: #232222;
+}
+
+.ad-label__wrapper {
+display: flex;
+justify-content: space-between;
+gap: 80px;
+}
+
+.ad-label__image{
+width: 152px;
+}
+
+.ad-label__slogan{
+margin-top: 18px;
+font-size: 24px;
+line-height: 28px;   
+font-weight: 700;
+color: #fff;
+}
+
+.ad-label__logo-image{
+width: 134px;
+}
+
+.ad-label__logo-image__item{
+width: 100%;
+height: 100%;
+}

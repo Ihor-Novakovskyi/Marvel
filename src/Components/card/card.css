@@ -1,0 +1,40 @@
+.card {
+width: 200px;
+height: 318px;
+background-color: #232222;
+transition: transform 0.1s linear;
+cursor: pointer;
+}
+.card--bottom{
+    margin-bottom: 30px;
+}
+
+.card:hover{
+transform: scale(1.05);
+box-shadow: 5px 5px 20px #9F0013;
+}
+
+.card-image{
+height: 200px;
+}
+
+.card-image__item {
+width: 100%;
+height: 100%;
+}
+
+.card__character-name{
+margin: 16px 14px;
+display: inline-block;
+font-size: 22px;
+line-height: 26px;
+font-weight: 700;
+color: #fff;
+}
+
+.card-focused{
+outline: none;
+border: none;
+transform: scale(1.05);
+box-shadow: 5px 5px 20px #9F0013;
+}
