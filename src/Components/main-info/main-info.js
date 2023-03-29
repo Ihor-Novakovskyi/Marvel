@@ -1,5 +1,4 @@
 import { Component } from "react";
-import PropTypes from 'prop-types';
 import './main-info.css';
 import AdInfo from '../ad-info/ad-info.js';
 import CharactersCards from '../characters-card/characters-card.js';
@@ -69,8 +68,8 @@ export default class MainInfo extends Component {
                 <button onClick={onUpdateCardsOnPage} disabled={loadingNewCharacters} style={
                     loadingNewCharacters ? {opacity: '50%', transform: 'none'} : null
                 } className="btn btn-brown btn-brown--position-center btn-brown--size">
-                    <img src='./image/triangle.svg' className='triangle-top-left'></img>
-                    <img src='./image/triangle_1.svg' className='triangle-bottom-right'></img>
+                    <img src='./image/triangle.svg' className='triangle-top-left'/>
+                    <img src='./image/triangle_1.svg' className='triangle-bottom-right'/>
                     LOAD MORE
                 </button>
             </>
