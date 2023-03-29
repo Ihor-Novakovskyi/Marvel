@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Ihor-Novakovskyi/Marvel/static/css/main.047a97ed.css",
+    "main.js": "/Ihor-Novakovskyi/Marvel/static/js/main.7ef82483.js",
+    "index.html": "/Ihor-Novakovskyi/Marvel/index.html",
+    "main.047a97ed.css.map": "/Ihor-Novakovskyi/Marvel/static/css/main.047a97ed.css.map",
+    "main.7ef82483.js.map": "/Ihor-Novakovskyi/Marvel/static/js/main.7ef82483.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.047a97ed.css",
+    "static/js/main.7ef82483.js"
+  ]
+}
