@@ -1,20 +1,17 @@
 import './character-description.css';
-import { Component } from 'react';
+import Button from '../button/button';
 
-export default class CharacterDescription extends Component {
-    render() {
-        const { character } = this.props;
-        const comicsList = character.comics.available !== 0 ? <ComicsList comics={character.comics}/> 
-        : "...sorry, we do not have any information about comics";
+export default function CharacterDescription({character}) {
+    const comicsList = character.comics.available !== 0 ? <ComicsList comics={character.comics}/> 
+    : "...sorry, we do not have any information about comics";
 
-        return (   
-            <div className="description lighting-border">
-                <SelectedCharater character={character} />
-                <span className='text-label'>Comics:</span>
-                    {comicsList}
-            </div>
-        )
-    }
+    return (   
+        <div className="description lighting-border">
+            <SelectedCharater character={character} />
+            <span className='text-label'>Comics:</span>
+                {comicsList}
+        </div>
+    )
 }
 
 const SelectedCharater = ({ character }) => {
@@ -25,25 +22,23 @@ const SelectedCharater = ({ character }) => {
                 <div className="description__img">
                     <img src={thumbnail} alt="characters image" className="description__img__item" />
                 </div>
+
                 <div>
                     <p className="description_name-character name-character name-character--mr-bottom">{name}</p>
-                    <a href={homepage}>
-                        <button className="btn btn-brown btn-brown--mr-bottom">
-                            <img src='./image/triangle.svg' className='triangle-top-left' alt='button-image'></img>
-                            <img src='./image/triangle_1.svg' className='triangle-bottom-right' alt='button-image'></img>
-                            HOMEPAGE
-                        </button>
-                    </a>
-                    <a href={wiki}>
-                        <button className="btn btn-grey">
-                            <img src='./image/triangle.svg' className='triangle-top-left' alt='button-image'></img>
-                            <img src='./image/triangle_1.svg' className='triangle-bottom-right' alt='button-image'></img>
-                            WIKI
-                        </button>
-                    </a>
-                </div>
+                    <div>
+                        <a href={homepage}>
+                            <Button btnName="HOMEPAGE"  style={{marginBottom: "16px"}} color="brown"/>
+                        </a>
+                    </div>
 
+                    <div>
+                        <a href={wiki}>
+                            <Button btnName="WIKI" color="grey"/>  
+                        </a>
+                    </div>
+                </div>
             </div>
+
             <p className="description__text-info">
                 {description}
             </p>

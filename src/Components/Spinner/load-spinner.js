@@ -1,6 +1,5 @@
 const Spinner = () => {
     return (
-
         <svg xmlns="http://www.w3.org/2000/svg" style={{ margin: '0px auto', background: 'none', display: 'block', width: 150, height: 150, }} viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
             <g transform="translate(80,50)">
                 <g transform="rotate(0)">

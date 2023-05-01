@@ -10,7 +10,7 @@ margin-bottom: 16px;
 }
 
 .description__img{
-max-width: 150px;
+width: 150px;
 height: 150px;;
 }
 
@@ -20,10 +20,6 @@ height: 150px;;
 
 .name-character--mr-bottom {
     margin-bottom: 35px;
-}
-
-.btn-brown--mr-bottom{
-margin-bottom: 16px;
 }
 
 .description__text-info{

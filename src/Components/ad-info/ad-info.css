@@ -1,5 +1,6 @@
 .main-page__ad-info {
 display: flex;
+height: 250px;
 margin-bottom: 50px;
 }
 
@@ -43,53 +44,6 @@ font-weight: 700;
 
 .action-button{
 display: inline-block;
-}
-.btn {
-position: relative;
-min-width: 101px;
-max-width: 101px;
-height: 38px;
-font-size: 14px;
-line-height: 16px;
-color: #fff;
-border: none;
-cursor: pointer;
-transition: all 0.1s linear;
-}
-.btn:hover{
-transform: scale(1.05);
-}
-.btn:active{
-transform: scale(1.1) ;
-}
-
-.btn-brown {
-background-color: #9f0013;
-
-}
-
-.main-page__btn-brown--mr-right{
-margin-right: 32px;
-}
-
-.btn-grey {
-background-color: #5c5c5c;
-}
-
-.triangle-top-left {
-position: absolute;
-width: 14px;
-height: 14px;
-top: -1px;
-left: -1px;
-}
-
-.triangle-bottom-right {
-position: absolute;
-width: 15px;
-height: 15px;
-right: -1px;
-bottom: -1px;
 }
 
 .main-page__info-block{

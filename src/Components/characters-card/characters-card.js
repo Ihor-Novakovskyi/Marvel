@@ -1,73 +1,60 @@
 import './characters-card.css';
 import Card from '../card/card';
-import MarvelService from '../../services/MarvelServices';
-import { Component } from 'react';
+import MarvlService from '../../services/MarvelServices';
+import { useState, useMemo, useEffect } from 'react';
 import Spinner from '../Spinner/load-spinner';
 import ErrorMessage from '../errorMessage/ErrorMesage';
 
-export default class CharactersCards extends Component {
-    state = {
-        characters: [],
-        loadState: true,
-        error: false,
-    }
+export default function CharactersCards({updatedCardsOnPage, setCardsOnPage, characterSelected}) {
+    const [characters, setCharacters] = useState([]);
+    const [loadState, setLoadState] = useState(true);
+    const [error, setError] = useState(false);
+    const MarvelService = useMemo(() => new MarvlService());
 
-    MarvelService = new MarvelService();
-
-    loadCharacterCardsOnPage = (setCardsOnPage) => {
-        this.MarvelService.getCharacters(setCardsOnPage)
+    const loadCharacterCardsOnPage = (setCardsOnPage) => {
+        MarvelService.getCharacters(setCardsOnPage)
             .then((newCharacters) => {
-                this.props.updatedCardsOnPage();
-                this.setState(({characters}) => ({
-                    characters: [...characters,...newCharacters],
-                    loadState: false,
-                    error: false,
-                }))
+                setCharacters([...characters,...newCharacters]);
+                setLoadState(false);
+                setError(false);
+                updatedCardsOnPage();
             })
             .catch((e) => {
                 console.log(e)
-                this.setState({
-                    loadState: false,
-                    error: true,
-                })
+                setLoadState(false);
+                setError(true);
             })
     }
   
-    componentDidMount() {
-        this.loadCharacterCardsOnPage();
-    }
-    componentDidUpdate(preProps) {
-        if(preProps.setCardsOnPage !== this.props.setCardsOnPage) {
-            this.loadCharacterCardsOnPage(this.props.setCardsOnPage)
-        }
-    }
+    useEffect(() => {
+      loadCharacterCardsOnPage();
+    },[])
+
+    useEffect(() => {
+            loadCharacterCardsOnPage(setCardsOnPage)
+    }, [setCardsOnPage])
+        
+    let showCurrentInfo = null;
+    if (loadState) {
+        showCurrentInfo = <Spinner />
+    } else if (error) {
+        showCurrentInfo = <ErrorMessage style={{width: '300px', height: '300px',}}/>
+    } else {
+        showCurrentInfo = characters.map((element) => {
+            
+            const { id } = element;
+            return (
+                <Card key={id} {...element} characterSelected={characterSelected} />
+            )
+        })
         
 
-    render() {
-        const { props: { characterSelected }, state: { characters, loadState, error } } = this;
-        let showCurrentInfo = null;
-        if (loadState) {
-            showCurrentInfo = <Spinner />
-        } else if (error) {
-            showCurrentInfo = <ErrorMessage style={{width: '300px', height: '300px',}}/>
-        } else {
-            showCurrentInfo = characters.map((element) => {
-                
-                const { id } = element;
-                return (
-                    <Card key={id} {...element} characterSelected={characterSelected} />
-                )
-            })
-            
-
-        }
-
-        return (
-                <div className="characters-cards">
-                    {showCurrentInfo}
-                </div>
-           
-        )
     }
 
+    return (
+            <div className="characters-cards">
+                {showCurrentInfo}
+            </div>
+        
+    )
 } 
