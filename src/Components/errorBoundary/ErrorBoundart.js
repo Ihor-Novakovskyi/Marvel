@@ -4,7 +4,8 @@ export default class ErrorBoundary extends Component {
     state = {
         error: false
     }
-    componentDidCatch() {
+    componentDidCatch(err, info) {
+        console.log(err, info)
         this.setState({error: true})
     }
 

@@ -1,5 +1,7 @@
 import './comics-detail.css';
 import MagazineAd from '../magazine-ad/magazine-add';
+import xMen from './xmen.png'
+
 
 export default function ComicsDetail() {
     return (
@@ -7,7 +9,7 @@ export default function ComicsDetail() {
             <MagazineAd/>
             <div className="comics-detail">
                 <div className="comics-detail__image-wrapper">
-                    <img src="./image/xmen.png" alt="comics image" className="comics-detail__image-wrapper" />
+                    <img src={xMen} alt="comics image" className="comics-detail__image-wrapper" />
                 </div>
                 <div className="comics-detail__description-block">
                     <p className="comics-detail__name">X-Men: Days of Future Past</p>

@@ -46,7 +46,9 @@ const SelectedCharater = ({ character }) => {
     )
 }
 
-const ComicsList = ({comics:{ available, items }}) => {
+const ComicsList = (el) => {
+    const {comics:{ available, items }} = el;
+    console.log(el)
     let comicsItems = available > 14 ? items.slice(0, 14) : items;
     let comicsList = comicsItems.map((item, id) => {
         return (

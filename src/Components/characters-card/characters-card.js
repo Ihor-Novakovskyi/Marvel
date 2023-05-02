@@ -8,7 +8,7 @@ import ErrorMessage from '../errorMessage/ErrorMesage';
 export default function CharactersCards({updatedCardsOnPage, setCardsOnPage, characterSelected}) {
     const [characters, setCharacters] = useState([]);
     const [loadState, setLoadState] = useState(true);
-    const [error, setError] = useState(false);
+    const [{error}, setError] = useState({error: false, typeError: null});
     const MarvelService = useMemo(() => new MarvlService());
 
     const loadCharacterCardsOnPage = (setCardsOnPage) => {

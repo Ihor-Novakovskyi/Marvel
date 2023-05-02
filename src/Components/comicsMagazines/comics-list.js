@@ -2,7 +2,7 @@ import MagazineAd from '../magazine-ad/magazine-add';
 import './comics-list.css';
 
 
-export default function ComicsList() {
+export default function ComicsMagazines() {
 
 const comicsINfo = [
     {
