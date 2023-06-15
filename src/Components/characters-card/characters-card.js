@@ -1,29 +1,17 @@
 import './characters-card.css';
 import Card from '../card/card';
-import MarvlService from '../../services/MarvelServices';
-import { useState, useMemo, useEffect } from 'react';
+import { useEffect } from 'react';
 import Spinner from '../Spinner/load-spinner';
 import ErrorMessage from '../errorMessage/ErrorMesage';
+import useMarvelService from '../../services/MarvelServices';
 
 export default function CharactersCards({updatedCardsOnPage, setCardsOnPage, characterSelected}) {
-    const [characters, setCharacters] = useState([]);
-    const [loadState, setLoadState] = useState(true);
-    const [{error}, setError] = useState({error: false, typeError: null});
-    const MarvelService = useMemo(() => new MarvlService());
+
+    const { getCharacters, error, processLoad, characters } = useMarvelService(updatedCardsOnPage);
 
     const loadCharacterCardsOnPage = (setCardsOnPage) => {
-        MarvelService.getCharacters(setCardsOnPage)
-            .then((newCharacters) => {
-                setCharacters([...characters,...newCharacters]);
-                setLoadState(false);
-                setError(false);
-                updatedCardsOnPage();
-            })
-            .catch((e) => {
-                console.log(e)
-                setLoadState(false);
-                setError(true);
-            })
+        getCharacters(setCardsOnPage);
+         
     }
   
     useEffect(() => {
@@ -35,9 +23,9 @@ export default function CharactersCards({updatedCardsOnPage, setCardsOnPage, cha
     }, [setCardsOnPage])
         
     let showCurrentInfo = null;
-    if (loadState) {
+    if (processLoad) {
         showCurrentInfo = <Spinner />
-    } else if (error) {
+    } else if (error.status) {
         showCurrentInfo = <ErrorMessage style={{width: '300px', height: '300px',}}/>
     } else {
         showCurrentInfo = characters.map((element) => {

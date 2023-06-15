@@ -1,15 +1,32 @@
+.magazines-wrapper{
+display: flex;
+flex-direction: column;
+}
+
 .magazines{
 display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 }
 
+
+
 .comics {
 flex-basis: 225px;
 flex-shrink: 0;
 height: 400px;
 margin-bottom: 55px;
+transition: transform 0.1s linear;
 }
+
+.comics:hover{
+transform: scale(1.05);
+}
+
+.comics-focused{
+transform: scale(1.05);
+}
+    
 
 .comics__image-wrapper{
 height: 345px;

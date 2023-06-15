@@ -6,8 +6,7 @@ import trRightBl from './triangle-right.svg';
  
 
 
-export default function Button({btnName, color, style = null, angle = 'white', ...props}) {
-    console.log(props)
+export default function Button({btnName, color, angle = 'white', className, disabled = false, style, ...props}) {
     let left = trLeft;
     let right = trRight;
     if (color === 'brown') {
@@ -15,8 +14,13 @@ export default function Button({btnName, color, style = null, angle = 'white', .
             left = trLeftBl;
             right = trRightBl;
         }
-        return (
-            <button style={{...style}} {...props} className={`btn btn-brown ${props.className ? props.className : ''}`}>
+      
+     return (
+            <button  
+                {...props} 
+                className={`btn btn-brown ${className ? className : ''}`}
+                style={{...style, ...(disabled ? {opacity: '50%', transform: 'none'} : {}), }}
+            >
                 <img src={left} className='triangle-top-left'></img>
                 <img src={right} className='triangle-bottom-right'></img>
                 {btnName}
@@ -26,7 +30,11 @@ export default function Button({btnName, color, style = null, angle = 'white', .
 
     if (color === 'grey') {
         return  (
-            <button style={{...style}} {...props} className={`btn btn-grey ${props.className}`}>
+            <button 
+            {...props} 
+            className={`btn btn-grey ${className}`}
+            style={{...style, ...(disabled ? {opacity: '50%', transform: 'none'} : {}), }}
+            >
                 <img src={left} className='triangle-top-left'></img>
                 <img src={right} className='triangle-bottom-right'></img>
                 {btnName}

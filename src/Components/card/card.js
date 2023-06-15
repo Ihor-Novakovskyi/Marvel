@@ -1,7 +1,6 @@
 import './card.css';
 import { useState } from 'react';
 import React from 'react';
-
 export default function Card(props) {
     const [focus, setFocus] = useState(false);    
     const onSelectedCharacter = () => {
@@ -23,5 +22,4 @@ export default function Card(props) {
             </span>
         </div>
     )
-    
 }

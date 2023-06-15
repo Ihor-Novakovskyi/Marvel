@@ -1,6 +1,10 @@
-.comics-detail{
+.comic-wrapper{
 position: relative;
+} 
+
+.comic-detail{
 display: flex;
+flex-wrap: wrap;
 gap: 50px;
 font-size: 18px;
 line-height: 21px;
@@ -8,16 +12,19 @@ line-height: 100%;
 color: #000;
 }
 
-.comics-detail__image-wrapper{
-width: 293px;
+.comic-detail__image-wrapper{
+flex-basis: 293px;
+
 height: 450px;
 }
 
-.comics-detail__description-block{
+.comic-detail__description-block{
 flex-basis: 550px;
+display: flex;
+flex-direction: column;
 }
 
-.comics-detail__name{
+.comic-detail__name{
 font-size: 22px;
 line-height: 26px;
 font-weight: 700;
@@ -25,25 +32,26 @@ color: #000;
 margin-bottom: 28px;
 }
 
-.comics-detail__description{
+.comic-detail__description{
 margin-bottom: 40px;
 }
 
-.comics-detail__page-info{
+.comic-detail__page-info{
 margin-bottom: 28px;
 }
 
-.comics-detail__language-info{
+.comic-detail__language-info{
 margin-bottom: 28px;
 }
 
-.comics-detail__price-info{
+.comic-detail__price-info{
 font-size: 24px;
 line-height: 28px;
 color: #9f0013;
 }
 
-.comics-detail__action-return{
+.comic-detail__action-return{
+color: inherit;
 position: absolute;
 text-decoration: none;
 font-weight: 700;

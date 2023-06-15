@@ -1,37 +1,17 @@
 import './ad-info.css';
 import Button from '../button/button';
-import React, { useState, useMemo, useEffect } from 'react';
-import MarveService from '../../services/MarvelServices';
+import React, { useEffect } from 'react';
+import useMarvelService from '../../services/MarvelServices';
 import Spinner from '../Spinner/load-spinner';
 import ErrorMesage from '../errorMessage/ErrorMesage';
 
-export default function AdInfo(props) {
-    const [character, setCharacter] = useState({});
-    const [processLoad, setProcessLoad] = useState(true);
-    const [error, setError] = useState(false);
-
-    const loadCharacter = (char) => {
-        setCharacter(char);
-        setProcessLoad(false);
-        setError(false);
-    }
-    const loadingChar = () => {
-        setProcessLoad(true);
-    }
-
-    const errorMessage = () => {
-        setError(true);
-        setProcessLoad(false);
-    }
-    const MarvelService = useMemo(() => new MarveService(), []);
-
+export default function AdInfo() {
+    const {setProcessLoad, processLoad, error, character, getCharacter} = useMarvelService();
+    
     const upDateChar = () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
-        MarvelService
-            .getCharacter(id)
-            .then(loadCharacter).catch(errorMessage);
-
-        loadingChar();
+        getCharacter(id);
+        setProcessLoad(true);
     }
 
     useEffect(() => upDateChar(), []);
@@ -39,8 +19,9 @@ export default function AdInfo(props) {
     let showCurrent = null;
     if (processLoad) {
         showCurrent = <Spinner />
-    } else if (error) {
+    } else if (error.status) {
         showCurrent = <ErrorMesage />
+        console.log(error.errorInfo)
     } else {
         showCurrent = <LoadedCharacter character={character} />
     }
@@ -57,7 +38,14 @@ export default function AdInfo(props) {
                 <p className="slogan">
                     Or choose another one
                 </p>
-                <Button btnName="TRY IT" onClick={upDateChar} color="brown" angle="black" />
+                <Button 
+                    btnName="TRY IT" 
+                    onClick={upDateChar} 
+                    color="brown" 
+                    angle="black" 
+                    disabled={processLoad}
+                    style={{...(processLoad ? { opacity: '50%', transform: 'none'} : null)}}
+                />
                 <div className="weapon-container__wrapper-first">
                     <img src='./image/mjolnir' alt="weapon item" className="weapon-container__item-1" />
                 </div>
@@ -72,7 +60,7 @@ export default function AdInfo(props) {
 
 
 function LoadedCharacter({ character }) {
-    const { name, description, thumbnail = '', homepage, wiki, comics } = character;
+    const { name, description, thumbnail = '', homepage, wiki } = character;
     return (
         <>
             <div className="wrapper-character-img">

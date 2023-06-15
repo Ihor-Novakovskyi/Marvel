@@ -1,5 +1,6 @@
 import './character-description.css';
 import Button from '../button/button';
+import { Link } from 'react-router-dom';
 
 export default function CharacterDescription({character}) {
     const comicsList = character.comics.available !== 0 ? <ComicsList comics={character.comics}/> 
@@ -46,17 +47,16 @@ const SelectedCharater = ({ character }) => {
     )
 }
 
-const ComicsList = (el) => {
-    const {comics:{ available, items }} = el;
-    console.log(el)
+const ComicsList = ({comics:{ available, items }}) => {
     let comicsItems = available > 14 ? items.slice(0, 14) : items;
-    let comicsList = comicsItems.map((item, id) => {
+    let comicsList = comicsItems.map(item => {
+        const id = item.resourceURI.split('/').filter(el => +el)
         return (
-            <a className="comics-list__item lighting-border lighting-border" href={item.resourceURI + 'apikey=38eba90e10f78ecffe28d4ae338606b4'} key={id}>
+            <Link to={`/comic/${id}`} className="comics-list__item lighting-border lighting-border" key={id}>
                 <li>
                     {item.name}
                 </li>
-            </a>
+            </Link>
         )
     });
 
@@ -65,4 +65,5 @@ const ComicsList = (el) => {
             {comicsList}
         </ul>
     ) 
+
 }

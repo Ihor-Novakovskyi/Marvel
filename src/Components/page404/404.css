@@ -1,0 +1,74 @@
+.error-page {
+display: flex;
+flex-direction: column;
+}
+.error-page__info {
+display: flex;
+}
+
+.error-page__wrapper{
+text-align: center;
+flex-basis: 300px;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+gap: 50px;
+}
+.error-message{
+font-size: 20px;
+font-weight: bold;
+}
+
+.erro-page__slogan{
+font-size: 26px;
+animation: hydra-blinking 1s linear infinite;
+}
+@keyframes hydra-blinking {
+ 100% {
+    opacity: 1;
+ }
+ 75% {
+    opacity: 0.75;
+ }
+ 50% {
+    opacity: 0.5;
+ }
+ 25%{
+    opacity: 0.25;
+ }
+}
+
+.hydra-animation {
+height: 250px;
+opacity:50%;  
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+animation: glitch .5s linear infinite;
+}
+
+.error-page__image {
+height: 400px;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+flex-basis: 200px;
+flex-grow: 1;
+}
+
+@keyframes glitch {
+0% {
+    background-position-y: center, center, center;
+}
+25% {
+    background-position-y: center, 2px, 5px;
+}
+50% {
+    background-position-y: center, 6px, -1px;
+}
+75% {
+    background-position-y: center, 4px, 8px;}
+100% {
+    background-position-y: center, 7px, 0px;
+}
+}
