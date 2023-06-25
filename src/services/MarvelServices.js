@@ -92,8 +92,6 @@ export default function useMarvelService(updatedCardsOnPage) {
         })
     }
     const _tranformDataCharacter = (character) => {
-        console.log('set object not doing')
-        console.log('character object ', character)
         if (character) {
             return {
                 id: character.id,

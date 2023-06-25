@@ -1,10 +1,10 @@
 import './character-search.css';
-import { Component, useState, memo } from 'react';
+import { Component, useState, memo, useEffect } from 'react';
 import Button from '../button/button';
 import { Link } from 'react-router-dom';
 import useMarvelService from '../../services/MarvelServices';
 
-function CharactersSearch({ active, primaryForm, searchRezult }) {
+function CharactersSearch() {
    const [inputData, setInputData] = useState('');
    const [errorValidate, setErrorValidate] = useState({ nameErrorValid: '', stateErrorValid: false });
    const { character, getCharacter, setCharacter, processLoad, setProcessLoad } = useMarvelService();
@@ -19,6 +19,7 @@ function CharactersSearch({ active, primaryForm, searchRezult }) {
    }
    console.log('form render')
    console.log('process load', processLoad)
+   useEffect(() => setProcessLoad(false), [])
    const validate = (enterValue) => {
 
       if ((/^[\d]+$/g).test(enterValue)) {
@@ -59,7 +60,7 @@ function CharactersSearch({ active, primaryForm, searchRezult }) {
             <p className="searc-form__action-label">Or find a character by name:</p>
             <div className='search-form__wrapper'>
                <input type="text" className="search-form__field" placeholder='Enter name' value={ inputData } onChange={ enterringData } />
-               <Button disabled={ false } btnName="FIND" color="brown" />
+               <Button disabled={ processLoad } btnName="FIND" color="brown" />
             </div>
          </form>
          <div className={ `search-form__wrapper search-form__wrapper--space-between` }>
@@ -70,4 +71,4 @@ function CharactersSearch({ active, primaryForm, searchRezult }) {
       </div>
    )
 }
-export default memo(CharactersSearch)
+export default CharactersSearch;
