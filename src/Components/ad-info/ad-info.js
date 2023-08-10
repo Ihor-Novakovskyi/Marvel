@@ -4,7 +4,8 @@ import React, { useEffect } from 'react';
 import useMarvelService from '../../services/MarvelServices';
 import Spinner from '../Spinner/load-spinner';
 import ErrorMesage from '../errorMessage/ErrorMesage';
-
+import mjolnir from './mjolnirsvg.svg';
+import shield from './shieldsvg.svg';
 export default function AdInfo() {
     const {setProcessLoad, processLoad, error, character, getCharacter} = useMarvelService();
     
@@ -47,10 +48,10 @@ export default function AdInfo() {
                     style={{...(processLoad ? { opacity: '50%', transform: 'none'} : null)}}
                 />
                 <div className="weapon-container__wrapper-first">
-                    <img src='./image/mjolnir' alt="weapon item" className="weapon-container__item-1" />
+                    <img src={mjolnir} alt="weapon item" className="weapon-container__item-1" />
                 </div>
                 <div className="weapon-container__wrapper-second">
-                    <img src="./image/shield" alt="weapon item" className="weapon-container__item-2" />
+                    <img src={shield} alt="weapon item" className="weapon-container__item-2" />
                 </div>
             </div>
         </div>

@@ -8,7 +8,6 @@ import ComicsMagazines from "./Components/comicsMagazines/comics-list";
 import ErrorBoundary from "./Components/errorBoundary/ErrorBoundary";
 import Page404 from "./Components/page404/404";
 
-
 export default function MarvelComics() {
 
   return (

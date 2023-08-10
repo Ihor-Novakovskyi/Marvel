@@ -14,7 +14,7 @@ export default function DetailCharacter(props) {
     useEffect(() => {
        getCharacter(name);
     }, [])
-    console.log('render')
+
     let showInfo = null;
     if (processLoad) {
         showInfo = <Spinner/>;
