@@ -27,3 +27,23 @@
     right: -178px;
     z-index: -1;
 }
+@media (width < 1480px) {
+    .main-page__character-label {
+        display: none;
+    }
+}
+@media (width < 940px) {
+    .characters-block {
+        display: block;
+    }
+    .actions-block {
+        display: flex;
+        margin-bottom: 32px;
+        gap: 10px;
+    }
+}
+@media (width < 800px) {
+    .actions-block {
+        display: block;
+    }
+}

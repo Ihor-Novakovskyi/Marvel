@@ -1,6 +1,7 @@
 .description {
 padding: 25px;
 margin-bottom: 32px;
+box-sizing: border-box;
 }
 
 .description-character__wrapper{
@@ -58,4 +59,19 @@ list-style: none;
 }
 .comics-list__item:not(:last-child){
   margin-bottom: 10px;  
+}
+@media (width < 940px) {
+
+    .description {
+        margin-bottom: 0px;
+        flex-basis: 250px;
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+}
+
+@media (width < 800px) {
+    .description {
+       margin-bottom: 32px;
+    }
 }
