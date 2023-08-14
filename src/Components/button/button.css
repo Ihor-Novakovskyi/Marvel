@@ -1,7 +1,8 @@
 .btn {
     position: relative;
-    min-width: 101px;
-    max-width: 101px;
+    /* min-width: 101px;
+    max-width: 101px; */
+    width: 101px;
     height: 38px;
     font-size: 14px;
     line-height: 16px;
@@ -45,3 +46,10 @@
     right: -1px;
     bottom: -1px;
     }
+
+@media (width < 800px) {
+    .btn {
+        font-size: 14px;
+        height: 30px;
+    }
+}

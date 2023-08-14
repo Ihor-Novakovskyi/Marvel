@@ -1,8 +1,8 @@
 .card {
 width: 200px;
 height: 318px;
-background-color: #232222;
-transition: transform 0.1s linear;
+background-color: hsl(0, 1%, 14%);
+transition: transform 0.2s linear;
 cursor: pointer;
 }
 .card--bottom{
@@ -37,4 +37,11 @@ outline: none;
 border: none;
 transform: scale(1.05);
 box-shadow: 5px 5px 20px #9F0013;
+}
+@media (width < 470px) {
+    .card {
+        width: 100%;
+        height: auto;
+    }
+   
 }
