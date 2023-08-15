@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/github.io/Marvel/static/css/main.8a9dd198.css",
-    "main.js": "/github.io/Marvel/static/js/main.d6ed61ec.js",
+    "main.js": "/github.io/Marvel/static/js/main.c80c1bfb.js",
     "static/media/shieldsvg.svg": "/github.io/Marvel/static/media/shieldsvg.364d2cb88dbad04981859034f04d9c4b.svg",
     "static/media/bg asset.png": "/github.io/Marvel/static/media/bg asset.4d6f967110994e4613c0.png",
     "static/media/hero.jpg": "/github.io/Marvel/static/media/hero.20f0e6633e7d0d2dbcbe.jpg",
@@ -17,10 +17,10 @@
     "static/media/triangle.svg": "/github.io/Marvel/static/media/triangle.365570afa2a88704faa49ee43f9fabf9.svg",
     "static/media/triangle_1.svg": "/github.io/Marvel/static/media/triangle_1.c2689e6b6611fac8b1f80be0d77dac93.svg",
     "main.8a9dd198.css.map": "/github.io/Marvel/static/css/main.8a9dd198.css.map",
-    "main.d6ed61ec.js.map": "/github.io/Marvel/static/js/main.d6ed61ec.js.map"
+    "main.c80c1bfb.js.map": "/github.io/Marvel/static/js/main.c80c1bfb.js.map"
   },
   "entrypoints": [
     "static/css/main.8a9dd198.css",
-    "static/js/main.d6ed61ec.js"
+    "static/js/main.c80c1bfb.js"
   ]
 }
