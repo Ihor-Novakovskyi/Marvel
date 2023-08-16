@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Marvel/static/css/main.9577e5ab.css",
+    "main.css": "/Marvel/static/css/main.cf2949ba.css",
     "main.js": "/Marvel/static/js/main.c7139932.js",
     "static/media/shieldsvg.svg": "/Marvel/static/media/shieldsvg.364d2cb88dbad04981859034f04d9c4b.svg",
     "static/media/bg asset.png": "/Marvel/static/media/bg asset.4d6f967110994e4613c0.png",
@@ -16,11 +16,11 @@
     "static/media/triangle-right.svg": "/Marvel/static/media/triangle-right.e166b1f65770c464853422db2a450c9c.svg",
     "static/media/triangle.svg": "/Marvel/static/media/triangle.365570afa2a88704faa49ee43f9fabf9.svg",
     "static/media/triangle_1.svg": "/Marvel/static/media/triangle_1.c2689e6b6611fac8b1f80be0d77dac93.svg",
-    "main.9577e5ab.css.map": "/Marvel/static/css/main.9577e5ab.css.map",
+    "main.cf2949ba.css.map": "/Marvel/static/css/main.cf2949ba.css.map",
     "main.c7139932.js.map": "/Marvel/static/js/main.c7139932.js.map"
   },
   "entrypoints": [
-    "static/css/main.9577e5ab.css",
+    "static/css/main.cf2949ba.css",
     "static/js/main.c7139932.js"
   ]
 }
