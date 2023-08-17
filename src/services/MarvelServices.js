@@ -7,8 +7,6 @@ export default function useMarvelService(updatedCardsOnPage) {
     const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
     const _apiKey = 'apikey=38eba90e10f78ecffe28d4ae338606b4';
     const { processLoad, setError, setProcessLoad, error, request } = useHttp();
-    let hookData = { processLoad, setError, setProcessLoad, error, request };
- 
     const [characters, setCharacters] = useState([]);
     const [character, setCharacter] = useState({});
     const [comicsList, setComicsList] = useState([]);
